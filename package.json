@@ -1,0 +1,26 @@
+{
+  "name": "SimpleSSG",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000S\u0000i\u0000m\u0000p\u0000l\u0000e\u0000S\u0000S\u0000G\u0000\r\u0000 \u0000",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "write": "node ./src/write.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carlsopa/SimpleSSG.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/carlsopa/SimpleSSG/issues"
+  },
+  "homepage": "https://github.com/carlsopa/SimpleSSG#readme",
+  "dependencies": {
+    "gray-matter": "^4.0.2",
+    "marked": "^1.2.7",
+    "prompt": "^1.0.0"
+  }
+}
