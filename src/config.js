@@ -4,3 +4,4 @@ const config = {
         outdir: './public'
     }
 }
+module.exports = config
