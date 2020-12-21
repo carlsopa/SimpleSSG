@@ -15,9 +15,9 @@ const postHTML = data => `
 </html>`
 
 const createPost = postPath => {
-    const data = fs.readFileSync(`${config.dev}/${postPath}`,"utf8")
-    const content = fm(data)
-    content.body  = marked(content.body)
+    const data = fs.readFileSync(`${config.dev.postdir}/${postPath}.md`,"utf8")
+    const content = matter(data)
+    content.body  = marked(content.content)
     content.path = postPath;
     return content
 }
@@ -28,7 +28,7 @@ const createPosts = posts => {
             fs.mkdirSync(`${config.dev.outdir}/${post.path}`)
         fs.writeFile(
             `${config.dev.outdir}/${post.path}/index.html`,
-            posthtml(post),
+            postHTML(post),
             e => {
                 if (e) throw e
                 console.log('success!')
