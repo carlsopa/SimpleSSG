@@ -1,6 +1,6 @@
 const chokidar = require('chokidar')
 const EventEmitter = require('events').EventEmitter
-const fsextra = require('fs-extra')
+const fse = require('fs-extra')
 
 class Observer extends EventEmitter {
     constructor(){
@@ -9,6 +9,10 @@ class Observer extends EventEmitter {
     watchFolder(folder) {
         try{
         console.log(`Watching for changes on: ${folder}`)
+        var watcher = chokidar.watch(folder, {persistent: true})
+        watcher
+            .on('add', filePath=>{console.log('add')})
+            .on('unlink', filePath=>{console.log('gone')})
         
 
     } catch(error) {
@@ -17,6 +21,5 @@ class Observer extends EventEmitter {
 }
 }
 path = './content'
-console.log('here')
 var obs = new Observer()
 obs.watchFolder(path)
