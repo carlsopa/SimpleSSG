@@ -1,6 +1,7 @@
 const config = require('./config')
 const fs = require('fs')
 
+//Template for the main homepage of the site.  This will allow links and a bit of information about the author
 const homepage = posts => `
 <!DOCTYPE html>
 <html lang="en">
@@ -18,10 +19,10 @@ ${posts.map(
 </body>
 </html>
 `
+//A function that will create the main page with the above template, as well as data passed to it through the posts
 const addHomePage = posts => {
     fs.writeFile(`index.html`,homepage(posts),e=> {
         if(e) throw e;
-        console.log('index created')
     })
 }
 module.exports = addHomePage
