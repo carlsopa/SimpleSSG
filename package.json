@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "write": "node ./src/write.js",
-    "build": "node ./src/index.js"
+    "serve": "node ./src/server.js",
+    "build": "node ./src/index.js",
+    "observe": "node ./src/services/observer.js"
   },
   "repository": {
     "type": "git",
@@ -20,6 +22,8 @@
   },
   "homepage": "https://github.com/carlsopa/SimpleSSG#readme",
   "dependencies": {
+    "chokidar": "^3.4.3",
+    "fs-extra": "^9.0.1",
     "gray-matter": "^4.0.2",
     "marked": "^1.2.7",
     "prompt": "^1.0.0"
