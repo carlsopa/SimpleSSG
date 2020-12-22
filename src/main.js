@@ -11,7 +11,7 @@ const homepage = posts => `
 <h1>${config.site.blogName}</h1>
 <div>
 ${posts.map(
-    post=>`<div><h3><a href="./${post.path}"Title</a></h3>
+    post=>`<div><h3><a href="./public/${post.path.replace(' ','-')}.html"Title</a></h3>
     <p>Description</p></div>`
 ).join("")}
 </div>
@@ -19,7 +19,7 @@ ${posts.map(
 </html>
 `
 const addHomePage = posts => {
-    fs.writeFile(`${config.dev.outdir}/index.html`,homepage(posts),e=> {
+    fs.writeFile(`index.html`,homepage(posts),e=> {
         if(e) throw e;
         console.log('index created')
     })

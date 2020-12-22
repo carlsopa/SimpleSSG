@@ -27,7 +27,7 @@ const createPosts = posts => {
         if(!fs.existsSync(`${config.dev.outdir}/${post.path}`))
             fs.mkdirSync(`${config.dev.outdir}/${post.path}`)
         fs.writeFile(
-            `${config.dev.outdir}/${post.path}/index.html`,
+            `${config.dev.outdir}/${post.path.replace(' ','-')}.html`,
             postHTML(post),
             e => {
                 if (e) throw e
