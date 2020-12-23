@@ -24,8 +24,6 @@ const createPost = postPath => {
 //taking the main content from the above function we pass it through to the above template, and then output a new html file with the markdown, properly paresed out into HTML.
 const createPosts = posts => {
     posts.forEach(post=>{
-        if(!fs.existsSync(`${config.dev.outdir}/${post.path}`))
-            fs.mkdirSync(`${config.dev.outdir}/${post.path}`)
         fs.writeFile(
             `${config.dev.outdir}/${post.path.replace(' ','-')}.html`,
             postHTML(post),
