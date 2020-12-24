@@ -6,9 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "write": "node ./src/write.js",
-    "serve": "nodemon -e .md ./src/server.js",
+    "serve": "node ./src/server.js",
     "build": "node ./src/index.js",
-    "observe": "node ./src/services/observer.js"
+    "observe": "node ./src/services/observer.js",
+    "start": "concurrently  \"npm run observe\" \"npm run serve\""
   },
   "repository": {
     "type": "git",
