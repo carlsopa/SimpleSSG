@@ -14,14 +14,14 @@ const getDate= ()=>{
 
 prompt.get(['title'], function(err,result){
     if(err) {return onErr(err)}
-    data = `
-    ---
-    Author: Paul Carlson
-    Title: ${result.title}
-    Date: ${getDate()}
-    ---
-    `
-    fs.writeFile(result.title+'.md',data,function (err) {
+    data = 
+    
+`---
+Author: Paul Carlson
+Title: ${result.title}
+Date: ${getDate()}
+---`
+    fs.writeFile(`./content/${result.title}.md`,data,function (err) {
         if(err) throw err
     })
 })
